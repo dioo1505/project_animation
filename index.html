@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animatsiya</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            animation: rotateCube 5s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            /* background-color: #1abc9c; */
+            border: 3px dotted #ecf0f1;
+            box-shadow: 0 0 30px rgba(134, 129, 129, 0.5);
+        }
+
+        .face:nth-child(1) {
+            transform: rotateY(0deg) translateZ(75px);
+            /* background-color: #e74c3c; */
+        }
+
+        .face:nth-child(2) {
+            transform: rotateY(90deg) translateZ(75px);
+            /* background-color: #3498db; */
+        }
+
+        .face:nth-child(3) {
+            transform: rotateY(180deg) translateZ(75px);
+            /* background-color: #f1c40f; */
+        }
+
+        .face:nth-child(4) {
+            transform: rotateY(-90deg) translateZ(75px);
+            /* background-color: #9b59b6; */
+        }
+
+        .face:nth-child(5) {
+            transform: rotateX(90deg) translateZ(75px);
+            /* background-color: #1abc9c; */
+        }
+
+        .face:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(75px);
+            /* background-color: #e67e22; */
+        }
+
+        @keyframes rotateCube {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cube">
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+    </div>
+    
+</body>
+</html>
